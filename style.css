@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 63%;
+}
+
+body {
+  font-family: sans-serif;
+  color: #333;
+  line-height: 1.5;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: linear-gradient(to top left, lightgreen, #5920BC);
+}
+
+.show-modal {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.75rem 3.5rem;
+  margin: 5rem 2rem;
+  border: none;
+  background-color: #fff;
+  color: #444;
+  border-radius: 150px;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: white;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  overflow: hidden;
+}
+
+.close-modal {
+  position: absolute;
+  top: 0.25rem;
+  right: 1rem;
+  font-size: 5rem;
+  color: #333;
+  border: none;
+  background: none;
+  cursor: pointer
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+p {
+  font-size: 1.8rem
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+  backdrop-filter: blur(5px);
+}
+
+.hidden {
+  display: none
+}
+
+.card {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  margin-right: 24px;
+}
+
+.img {
+  object-fit: cover;
+  height: auto;
+  width: 170px;
+  margin: 0px;
+}
+
+.text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin: 2rem 1rem;
+  font-size: 16px;
+}
+
+.review {
+  font-size: larger;
+  font-weight: 500;
+}
+
+.author {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: rgb(96, 96, 254);
+  font-size: large;
+  font-weight: 600;
+}
+
+.work {
+  font-weight: 500;
+}
