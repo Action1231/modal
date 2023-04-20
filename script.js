@@ -4,6 +4,7 @@ const modal = document.querySelector('.modal')
 const overlay = document.querySelector('.overlay')
 const showBtnModal = document.querySelectorAll('.show-modal')
 const closeBtnModal = document.querySelector('.close-modal')
+const card = document.querySelector('.card')
 
 const users = [
   {
@@ -22,7 +23,7 @@ const users = [
     id: 2,
     name: 'Ehtiram',
     surname: 'Azizov',
-    image: 'https://youtu.be/zgZXGRMgSx4',
+    image: 'https://khazar.org/uploads/articles/o_1b322mui71d5o17cemfrqphn16m.JPG',
     description: `Hi! I'm Ehtiram! I work as a Petroluem Engineer with BP! I have over 20 years of experience in Petroluem Engineering, and I am regarded as one of the best Oil Engineers in history. In this image on the left, I am lecturing students on problems in a oil well in Azerbaijan.`,
     work: {
       name: 'Petroluem Engineer',
@@ -49,14 +50,38 @@ const users = [
 
 for (let i=0; i < showBtnModal.length; i++) {
   showBtnModal[i].addEventListener('click', function() {
-    modal.classList.remove("hidden");
-    overlay.classList.remove("hidden");
+    openModal(i+1)
   })
 }
+
+function openModal (index) {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+
+  const user = users.find(u => u.id ===index)
+  generateMarkup(user)
+};
+
+function generateMarkup(user) {
+  card.innerHTML = ''
+  const markup = `
+  <img class="img" src="${user.image}" alt="">
+  <div class="text-wrapper">
+    <p class="review">${user.description}</p>
+    <p class="author">${user.name} ${user.surname}</p>
+    <p class="work">${user.work.name}, ${user.work.company}</p>
+  </div>
+ `
+
+ card.insertAdjacentHTML('beforeend', markup)
+}
+
+
 
 const closeModal = function() {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
+  generateMarkup()
 }
 
 closeBtnModal.addEventListener('click', closeModal)
